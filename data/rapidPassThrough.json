@@ -1,0 +1,20 @@
+{
+  "persons": [
+    { "id": "P008", "name": "Chidi Okonkwo", "nationality": "Nigeria", "dob": "1975-08-19", "pep_status": false, "risk_tier": "high" },
+    { "id": "P009", "name": "Fatima Al-Rashid", "nationality": "Kenya", "dob": "1988-03-25", "pep_status": false, "risk_tier": "high" }
+  ],
+  "companies": [
+    { "id": "C005", "name": "Atlantic Bridge LLC", "jurisdiction": "UK/US", "incorporation_date": "2022-09-01", "entity_type": "shell", "risk_tier": "high" }
+  ],
+  "accounts": [
+    { "id": "A012", "account_number": "NG-012-9901", "bank_name": "Zenith Bank Nigeria", "jurisdiction": "Nigeria", "currency": "NGN", "opened_date": "2022-10-01", "holder_id": "P008" },
+    { "id": "A013", "account_number": "US-013-1122", "bank_name": "JP Morgan Chase", "jurisdiction": "UK/US", "currency": "USD", "opened_date": "2022-11-15", "holder_id": "C005" },
+    { "id": "A014", "account_number": "US-014-3344", "bank_name": "Citibank US", "jurisdiction": "UK/US", "currency": "USD", "opened_date": "2022-11-20", "holder_id": "C005" },
+    { "id": "A015", "account_number": "KE-015-5566", "bank_name": "Co-op Bank Kenya", "jurisdiction": "Kenya", "currency": "KES", "opened_date": "2022-12-01", "holder_id": "P009" }
+  ],
+  "transactions": [
+    { "id": "T011", "amount": 180000, "currency": "USD", "timestamp": "2023-06-01T08:00:00Z", "transaction_type": "wire", "value_date": "2023-06-01", "settlement_date": "2023-06-01", "from_account": "A012", "to_account": "A013" },
+    { "id": "T012", "amount": 178000, "currency": "USD", "timestamp": "2023-06-01T10:30:00Z", "transaction_type": "wire", "value_date": "2023-06-01", "settlement_date": "2023-06-01", "from_account": "A013", "to_account": "A014" },
+    { "id": "T013", "amount": 176000, "currency": "USD", "timestamp": "2023-06-01T13:45:00Z", "transaction_type": "wire", "value_date": "2023-06-01", "settlement_date": "2023-06-01", "from_account": "A014", "to_account": "A015" }
+  ]
+}

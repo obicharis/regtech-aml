@@ -1,0 +1,17 @@
+{
+  "name": "regtech-aml",
+  "version": "1.0.0",
+  "description": "RegTech AML Pipeline - graph-based money laundering detection",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test-connection": "node scripts/testConnection.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "neo4j-driver": "^5.27.0",
+    "dotenv": "^16.4.5",
+    "cors": "^2.8.5"
+  }
+}

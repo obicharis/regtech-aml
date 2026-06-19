@@ -1,0 +1,26 @@
+{
+  "persons": [
+    { "id": "P002", "name": "Amara Osei", "nationality": "Kenya", "dob": "1985-07-22", "pep_status": false, "risk_tier": "high" },
+    { "id": "P003", "name": "Jabari Mwangi", "nationality": "Kenya", "dob": "1990-02-11", "pep_status": false, "risk_tier": "high" },
+    { "id": "P004", "name": "Zuri Kamau", "nationality": "Kenya", "dob": "1983-09-30", "pep_status": false, "risk_tier": "high" },
+    { "id": "P005", "name": "Kofi Otieno", "nationality": "Kenya", "dob": "1979-05-14", "pep_status": false, "risk_tier": "high" },
+    { "id": "P006", "name": "Nia Wanjiku", "nationality": "Kenya", "dob": "1992-12-03", "pep_status": false, "risk_tier": "high" },
+    { "id": "P007", "name": "Emeka Kariuki", "nationality": "Kenya", "dob": "1981-04-17", "pep_status": false, "risk_tier": "high" }
+  ],
+  "accounts": [
+    { "id": "A006", "account_number": "KE-006-2211", "bank_name": "Equity Bank Kenya", "jurisdiction": "Kenya", "currency": "KES", "opened_date": "2022-06-01", "holder_id": "P002" },
+    { "id": "A007", "account_number": "KE-007-3345", "bank_name": "KCB Bank Kenya", "jurisdiction": "Kenya", "currency": "KES", "opened_date": "2022-06-03", "holder_id": "P003" },
+    { "id": "A008", "account_number": "KE-008-4421", "bank_name": "Equity Bank Kenya", "jurisdiction": "Kenya", "currency": "KES", "opened_date": "2022-06-05", "holder_id": "P004" },
+    { "id": "A009", "account_number": "KE-009-5567", "bank_name": "Co-op Bank Kenya", "jurisdiction": "Kenya", "currency": "KES", "opened_date": "2022-06-07", "holder_id": "P005" },
+    { "id": "A010", "account_number": "KE-010-6678", "bank_name": "KCB Bank Kenya", "jurisdiction": "Kenya", "currency": "KES", "opened_date": "2022-06-09", "holder_id": "P006" },
+    { "id": "A011", "account_number": "KE-011-7789", "bank_name": "Equity Bank Kenya", "jurisdiction": "Kenya", "currency": "KES", "opened_date": "2022-05-15", "holder_id": "P007" }
+  ],
+  "transactions": [
+    { "id": "T005", "amount": 45000, "currency": "USD", "timestamp": "2023-05-02T10:00:00Z", "transaction_type": "transfer", "value_date": "2023-05-02", "settlement_date": "2023-05-03", "from_account": "A006", "to_account": "A011" },
+    { "id": "T006", "amount": 38000, "currency": "USD", "timestamp": "2023-05-03T11:00:00Z", "transaction_type": "transfer", "value_date": "2023-05-03", "settlement_date": "2023-05-04", "from_account": "A007", "to_account": "A011" },
+    { "id": "T007", "amount": 52000, "currency": "USD", "timestamp": "2023-05-04T09:30:00Z", "transaction_type": "transfer", "value_date": "2023-05-04", "settlement_date": "2023-05-05", "from_account": "A008", "to_account": "A011" },
+    { "id": "T008", "amount": 41000, "currency": "USD", "timestamp": "2023-05-05T14:00:00Z", "transaction_type": "transfer", "value_date": "2023-05-05", "settlement_date": "2023-05-06", "from_account": "A009", "to_account": "A011" },
+    { "id": "T009", "amount": 47000, "currency": "USD", "timestamp": "2023-05-06T15:30:00Z", "transaction_type": "transfer", "value_date": "2023-05-06", "settlement_date": "2023-05-07", "from_account": "A010", "to_account": "A011" },
+    { "id": "T010", "amount": 35000, "currency": "USD", "timestamp": "2023-05-08T09:00:00Z", "transaction_type": "transfer", "value_date": "2023-05-08", "settlement_date": "2023-05-09", "from_account": "A011", "to_account": "A006" }
+  ]
+}

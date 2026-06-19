@@ -1,0 +1,32 @@
+{
+  "persons": [
+    { "id": "P014", "name": "Adaeze Nwosu", "nationality": "Nigeria", "dob": "1986-02-19", "pep_status": false, "risk_tier": "low" },
+    { "id": "P015", "name": "Femi Bakare", "nationality": "Nigeria", "dob": "1979-11-05", "pep_status": false, "risk_tier": "low" },
+    { "id": "P016", "name": "Helen Pierce", "nationality": "UK/US", "dob": "1983-07-30", "pep_status": false, "risk_tier": "low" },
+    { "id": "P017", "name": "Michael Turner", "nationality": "UK/US", "dob": "1975-09-14", "pep_status": false, "risk_tier": "low" },
+    { "id": "P018", "name": "Esther Wambui", "nationality": "Kenya", "dob": "1990-12-08", "pep_status": false, "risk_tier": "low" }
+  ],
+  "companies": [
+    { "id": "C013", "name": "Lekki Hardware Supplies", "jurisdiction": "Nigeria", "incorporation_date": "2017-03-22", "entity_type": "operating", "risk_tier": "low" },
+    { "id": "C014", "name": "Riverside Bakery Co", "jurisdiction": "UK/US", "incorporation_date": "2011-10-08", "entity_type": "operating", "risk_tier": "low" },
+    { "id": "C015", "name": "Pioneer Tech Solutions", "jurisdiction": "UK/US", "incorporation_date": "2019-01-17", "entity_type": "operating", "risk_tier": "low" }
+  ],
+  "accounts": [
+    { "id": "A024", "account_number": "NG-024-1010", "bank_name": "Zenith Bank Nigeria", "jurisdiction": "Nigeria", "currency": "NGN", "opened_date": "2018-04-01", "holder_id": "P014" },
+    { "id": "A025", "account_number": "NG-025-2020", "bank_name": "GTBank Nigeria", "jurisdiction": "Nigeria", "currency": "NGN", "opened_date": "2015-06-10", "holder_id": "P015" },
+    { "id": "A026", "account_number": "UK-026-3030", "bank_name": "Barclays UK", "jurisdiction": "UK/US", "currency": "GBP", "opened_date": "2010-01-15", "holder_id": "P016" },
+    { "id": "A027", "account_number": "US-027-4040", "bank_name": "Wells Fargo", "jurisdiction": "UK/US", "currency": "USD", "opened_date": "2009-08-22", "holder_id": "P017" },
+    { "id": "A028", "account_number": "KE-028-5050", "bank_name": "KCB Bank Kenya", "jurisdiction": "Kenya", "currency": "KES", "opened_date": "2019-02-28", "holder_id": "P018" },
+    { "id": "A029", "account_number": "NG-029-6060", "bank_name": "First Lagos Bank", "jurisdiction": "Nigeria", "currency": "NGN", "opened_date": "2017-03-25", "holder_id": "C013" },
+    { "id": "A030", "account_number": "UK-030-7070", "bank_name": "HSBC UK", "jurisdiction": "UK/US", "currency": "GBP", "opened_date": "2011-10-12", "holder_id": "C014" },
+    { "id": "A031", "account_number": "US-031-8080", "bank_name": "Bank of America", "jurisdiction": "UK/US", "currency": "USD", "opened_date": "2019-01-20", "holder_id": "C015" }
+  ],
+  "transactions": [
+    { "id": "T020", "amount": 850, "currency": "USD", "timestamp": "2023-09-02T09:00:00Z", "transaction_type": "payroll", "value_date": "2023-09-02", "settlement_date": "2023-09-03", "from_account": "A029", "to_account": "A024" },
+    { "id": "T021", "amount": 1200, "currency": "USD", "timestamp": "2023-09-15T14:20:00Z", "transaction_type": "purchase", "value_date": "2023-09-15", "settlement_date": "2023-09-16", "from_account": "A025", "to_account": "A029" },
+    { "id": "T022", "amount": 60, "currency": "USD", "timestamp": "2023-09-20T11:00:00Z", "transaction_type": "purchase", "value_date": "2023-09-20", "settlement_date": "2023-09-21", "from_account": "A026", "to_account": "A030" },
+    { "id": "T023", "amount": 2400, "currency": "USD", "timestamp": "2023-10-01T16:30:00Z", "transaction_type": "invoice", "value_date": "2023-10-01", "settlement_date": "2023-10-03", "from_account": "A031", "to_account": "A027" },
+    { "id": "T024", "amount": 75, "currency": "USD", "timestamp": "2023-10-05T08:45:00Z", "transaction_type": "purchase", "value_date": "2023-10-05", "settlement_date": "2023-10-06", "from_account": "A028", "to_account": "A030" },
+    { "id": "T025", "amount": 500, "currency": "USD", "timestamp": "2023-10-12T13:10:00Z", "transaction_type": "transfer", "value_date": "2023-10-12", "settlement_date": "2023-10-13", "from_account": "A024", "to_account": "A026" }
+  ]
+}

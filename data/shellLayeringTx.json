@@ -1,0 +1,15 @@
+{
+  "accounts": [
+    { "id": "A001", "account_number": "NG-001-8841", "bank_name": "First Lagos Bank", "jurisdiction": "Nigeria", "currency": "NGN", "opened_date": "2022-11-01", "holder_id": "P001" },
+    { "id": "A002", "account_number": "KE-002-3392", "bank_name": "Equity Bank Kenya", "jurisdiction": "Kenya", "currency": "KES", "opened_date": "2023-01-12", "holder_id": "C001" },
+    { "id": "A003", "account_number": "KE-003-7710", "bank_name": "KCB Bank Kenya", "jurisdiction": "Kenya", "currency": "KES", "opened_date": "2023-02-25", "holder_id": "C002" },
+    { "id": "A004", "account_number": "KE-004-1156", "bank_name": "Equity Bank Kenya", "jurisdiction": "Kenya", "currency": "KES", "opened_date": "2023-03-08", "holder_id": "C003" },
+    { "id": "A005", "account_number": "UK-005-4423", "bank_name": "Barclays UK", "jurisdiction": "UK/US", "currency": "GBP", "opened_date": "2019-07-01", "holder_id": "C004" }
+  ],
+  "transactions": [
+    { "id": "T001", "amount": 250000, "currency": "USD", "timestamp": "2023-04-10T09:15:00Z", "transaction_type": "wire", "value_date": "2023-04-10", "settlement_date": "2023-04-11", "from_account": "A001", "to_account": "A002" },
+    { "id": "T002", "amount": 240000, "currency": "USD", "timestamp": "2023-04-15T11:30:00Z", "transaction_type": "wire", "value_date": "2023-04-15", "settlement_date": "2023-04-16", "from_account": "A002", "to_account": "A003" },
+    { "id": "T003", "amount": 232000, "currency": "USD", "timestamp": "2023-04-20T14:00:00Z", "transaction_type": "wire", "value_date": "2023-04-20", "settlement_date": "2023-04-22", "from_account": "A003", "to_account": "A004" },
+    { "id": "T004", "amount": 225000, "currency": "USD", "timestamp": "2023-04-28T16:45:00Z", "transaction_type": "investment", "value_date": "2023-04-28", "settlement_date": "2023-04-29", "from_account": "A004", "to_account": "A005" }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "persons": [
+    { "id": "P010", "name": "Grace Mutua", "nationality": "Kenya", "dob": "1991-01-15", "pep_status": false, "risk_tier": "low" },
+    { "id": "P011", "name": "Samuel Njoroge", "nationality": "Kenya", "dob": "1987-06-08", "pep_status": false, "risk_tier": "low" },
+    { "id": "P012", "name": "Mary Achieng", "nationality": "Kenya", "dob": "1994-11-22", "pep_status": false, "risk_tier": "low" },
+    { "id": "P013", "name": "Daniel Kiprop", "nationality": "Kenya", "dob": "1989-04-30", "pep_status": false, "risk_tier": "low" }
+  ],
+  "companies": [
+    { "id": "C009", "name": "Westlands General Store", "jurisdiction": "Kenya", "incorporation_date": "2018-02-10", "entity_type": "operating", "risk_tier": "low" }
+  ],
+  "accounts": [
+    { "id": "A016", "account_number": "KE-016-1100", "bank_name": "M-Pesa/Equity", "jurisdiction": "Kenya", "currency": "KES", "opened_date": "2021-03-01", "holder_id": "P010" },
+    { "id": "A017", "account_number": "KE-017-2211", "bank_name": "KCB Bank Kenya", "jurisdiction": "Kenya", "currency": "KES", "opened_date": "2021-05-14", "holder_id": "P011" },
+    { "id": "A018", "account_number": "KE-018-3322", "bank_name": "M-Pesa/Equity", "jurisdiction": "Kenya", "currency": "KES", "opened_date": "2020-09-20", "holder_id": "P012" },
+    { "id": "A019", "account_number": "KE-019-4433", "bank_name": "Co-op Bank Kenya", "jurisdiction": "Kenya", "currency": "KES", "opened_date": "2022-01-10", "holder_id": "P013" },
+    { "id": "A020", "account_number": "KE-020-5544", "bank_name": "Equity Bank Kenya", "jurisdiction": "Kenya", "currency": "KES", "opened_date": "2018-02-12", "holder_id": "C009" }
+  ],
+  "transactions": [
+    { "id": "T014", "amount": 45, "currency": "USD", "timestamp": "2023-07-03T09:00:00Z", "transaction_type": "purchase", "value_date": "2023-07-03", "settlement_date": "2023-07-04", "from_account": "A016", "to_account": "A020" },
+    { "id": "T015", "amount": 120, "currency": "USD", "timestamp": "2023-07-05T13:20:00Z", "transaction_type": "purchase", "value_date": "2023-07-05", "settlement_date": "2023-07-06", "from_account": "A017", "to_account": "A020" },
+    { "id": "T016", "amount": 30, "currency": "USD", "timestamp": "2023-07-10T16:45:00Z", "transaction_type": "purchase", "value_date": "2023-07-10", "settlement_date": "2023-07-11", "from_account": "A018", "to_account": "A020" },
+    { "id": "T017", "amount": 95, "currency": "USD", "timestamp": "2023-07-18T11:10:00Z", "transaction_type": "purchase", "value_date": "2023-07-18", "settlement_date": "2023-07-19", "from_account": "A019", "to_account": "A020" }
+  ]
+}

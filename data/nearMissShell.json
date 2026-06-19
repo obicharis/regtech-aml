@@ -1,0 +1,11 @@
+{
+  "companies": [
+    { "id": "C006", "name": "Britannia Industrial Holdings", "jurisdiction": "UK/US", "incorporation_date": "2008-03-12", "entity_type": "holding", "risk_tier": "low" },
+    { "id": "C007", "name": "Britannia East Africa Regional", "jurisdiction": "Kenya", "incorporation_date": "2012-06-20", "entity_type": "operating", "risk_tier": "low" },
+    { "id": "C008", "name": "Britannia Nairobi Manufacturing", "jurisdiction": "Kenya", "incorporation_date": "2015-09-04", "entity_type": "operating", "risk_tier": "low" }
+  ],
+  "ownership_edges": [
+    { "from": "C006", "to": "C007", "ownership_pct": 100, "start_date": "2012-06-20" },
+    { "from": "C007", "to": "C008", "ownership_pct": 80, "start_date": "2015-09-04" }
+  ]
+}

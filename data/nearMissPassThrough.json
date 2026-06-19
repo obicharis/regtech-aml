@@ -1,0 +1,16 @@
+{
+  "companies": [
+    { "id": "C010", "name": "Lagos Fresh Produce Exports", "jurisdiction": "Nigeria", "incorporation_date": "2016-04-11", "entity_type": "operating", "risk_tier": "low" },
+    { "id": "C011", "name": "Midland Clearing Services", "jurisdiction": "UK/US", "incorporation_date": "2005-01-20", "entity_type": "operating", "risk_tier": "low" },
+    { "id": "C012", "name": "Nairobi AgroDistributors Ltd", "jurisdiction": "Kenya", "incorporation_date": "2014-08-09", "entity_type": "operating", "risk_tier": "low" }
+  ],
+  "accounts": [
+    { "id": "A021", "account_number": "NG-021-7766", "bank_name": "GTBank Nigeria", "jurisdiction": "Nigeria", "currency": "NGN", "opened_date": "2016-05-01", "holder_id": "C010" },
+    { "id": "A022", "account_number": "UK-022-8877", "bank_name": "HSBC Correspondent Banking", "jurisdiction": "UK/US", "currency": "USD", "opened_date": "2005-02-15", "holder_id": "C011" },
+    { "id": "A023", "account_number": "KE-023-9988", "bank_name": "Standard Chartered Kenya", "jurisdiction": "Kenya", "currency": "KES", "opened_date": "2014-09-01", "holder_id": "C012" }
+  ],
+  "transactions": [
+    { "id": "T018", "amount": 32000, "currency": "USD", "timestamp": "2023-08-14T08:30:00Z", "transaction_type": "trade_settlement", "value_date": "2023-08-14", "settlement_date": "2023-08-14", "from_account": "A021", "to_account": "A022" },
+    { "id": "T019", "amount": 32000, "currency": "USD", "timestamp": "2023-08-14T10:15:00Z", "transaction_type": "trade_settlement", "value_date": "2023-08-14", "settlement_date": "2023-08-14", "from_account": "A022", "to_account": "A023" }
+  ]
+}
