@@ -1,1 +1,301 @@
 
+cat > public/demo.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RegTech AML — Risk Ledger</title>
+<style>
+  :root {
+    --ink: #1A1D23;
+    --panel: #232730;
+    --line: #343A45;
+    --text: #E8E6E1;
+    --muted: #9098A8;
+    --amber: #D4A24C;
+    --teal: #4A9B8E;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--ink);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    padding: 0 0 4rem 0;
+  }
+
+  header {
+    padding: 3rem 1.5rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    font-family: "Courier New", monospace;
+    color: var(--amber);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 540px;
+  }
+
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .pattern-section {
+    margin-top: 2.5rem;
+  }
+
+  .pattern-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 0.8rem;
+  }
+
+  .pattern-title {
+    font-size: 1.15rem;
+    font-weight: bold;
+  }
+
+  .pattern-status {
+    font-family: "Courier New", monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .pattern-status.loading::before {
+    content: "● ";
+    color: var(--muted);
+  }
+
+  .case-card {
+    background: var(--panel);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .case-card.flagged {
+    box-shadow: inset 0 0 0 1px rgba(212, 162, 76, 0.35);
+  }
+
+  .case-card.clear {
+    box-shadow: inset 0 0 0 1px rgba(74, 155, 142, 0.35);
+  }
+
+  .case-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .case-tag {
+    font-family: "Courier New", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+  }
+
+  .case-tag.flagged {
+    background: rgba(212, 162, 76, 0.15);
+    color: var(--amber);
+  }
+
+  .case-tag.clear {
+    background: rgba(74, 155, 142, 0.15);
+    color: var(--teal);
+  }
+
+  .risk-score {
+    font-family: "Courier New", monospace;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--amber);
+  }
+
+  .chain {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: "Courier New", monospace;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding: 0.9rem;
+    background: rgba(0,0,0,0.18);
+    border-radius: 6px;
+  }
+
+  .chain-node {
+    color: var(--text);
+  }
+
+  .chain-arrow {
+    color: var(--muted);
+  }
+
+  .reasoning {
+    color: var(--muted);
+    font-size: 0.9rem;
+    border-left: 2px solid var(--line);
+    padding-left: 0.9rem;
+  }
+
+  .empty-state {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  footer {
+    max-width: 900px;
+    margin: 3rem auto 0;
+    padding: 1.5rem 1.5rem 0;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-family: "Courier New", monospace;
+  }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 1.5rem; }
+    .case-top { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Live Risk Ledger</div>
+  <h1>RegTech AML — Graph-Based Detection</h1>
+  <p class="subtitle">Three laundering patterns, traced in real time across Nigeria, Kenya, and the UK/US, with reasoning a compliance officer can actually review.</p>
+</header>
+
+<main>
+
+  <section class="pattern-section">
+    <div class="pattern-header">
+      <div class="pattern-title">Shell Company Layering</div>
+      <div class="pattern-status loading" id="status-shell">checking</div>
+    </div>
+    <div id="results-shell"></div>
+  </section>
+
+  <section class="pattern-section">
+    <div class="pattern-header">
+      <div class="pattern-title">Circular / Fan-In Flows</div>
+      <div class="pattern-status loading" id="status-fanin">checking</div>
+    </div>
+    <div id="results-fanin"></div>
+  </section>
+
+  <section class="pattern-section">
+    <div class="pattern-header">
+      <div class="pattern-title">Rapid Pass-Through</div>
+      <div class="pattern-status loading" id="status-passthrough">checking</div>
+    </div>
+    <div id="results-passthrough"></div>
+  </section>
+
+</main>
+
+<footer>
+  api.base = https://regtech-aml.onrender.com
+</footer>
+
+<script>
+  const API_BASE = "https://regtech-aml.onrender.com";
+
+  function arrowChain(parts) {
+    return parts
+      .map(p => `<span class="chain-node">${p}</span>`)
+      .join('<span class="chain-arrow"> &rarr; </span>');
+  }
+
+  async function loadPattern(endpoint, statusId, resultsId, renderFn) {
+    const statusEl = document.getElementById(statusId);
+    const resultsEl = document.getElementById(resultsId);
+    try {
+      const res = await fetch(`${API_BASE}/api/risk-ledger/${endpoint}`);
+      const data = await res.json();
+      statusEl.classList.remove('loading');
+      statusEl.textContent = data.count > 0 ? `${data.count} flagged` : 'clear';
+
+      if (!data.flags || data.flags.length === 0) {
+        resultsEl.innerHTML = `<div class="empty-state">No matching patterns found in current dataset.</div>`;
+        return;
+      }
+      resultsEl.innerHTML = data.flags.map(renderFn).join('');
+    } catch (err) {
+      statusEl.classList.remove('loading');
+      statusEl.textContent = 'error';
+      resultsEl.innerHTML = `<div class="empty-state">Could not reach API: ${err.message}</div>`;
+    }
+  }
+
+  loadPattern('shell-layering', 'status-shell', 'results-shell', (f) => `
+    <div class="case-card flagged">
+      <div class="case-top">
+        <span class="case-tag flagged">Flagged</span>
+        <span class="risk-score">${f.riskScore}%</span>
+      </div>
+      <div class="chain">${arrowChain(f.chain || [f.origin, f.destination])}</div>
+      <div class="reasoning">${f.reasoning}</div>
+    </div>
+  `);
+
+  loadPattern('circular-fan-in', 'status-fanin', 'results-fanin', (f) => `
+    <div class="case-card flagged">
+      <div class="case-top">
+        <span class="case-tag flagged">Flagged</span>
+        <span class="risk-score">${f.uniqueFeeders} feeders</span>
+      </div>
+      <div class="chain">${arrowChain([...(f.feederAccounts || []), f.hubAccount])}</div>
+      <div class="reasoning">${f.reasoning}</div>
+    </div>
+  `);
+
+  loadPattern('rapid-pass-through', 'status-passthrough', 'results-passthrough', (f) => `
+    <div class="case-card flagged">
+      <div class="case-top">
+        <span class="case-tag flagged">Flagged</span>
+        <span class="risk-score">${f.amounts ? f.amounts.length : 3} hops</span>
+      </div>
+      <div class="chain">${arrowChain([f.origin, f.hop1, f.hop2, f.destination])}</div>
+      <div class="reasoning">${f.reasoning}</div>
+    </div>
+  `);
+</script>
+
+</body>
+</html>
+EOF
